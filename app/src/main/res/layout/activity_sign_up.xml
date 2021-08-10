@@ -87,22 +87,24 @@
                 android:inputType="textPassword"
                 android:padding="10dp" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/signUpBtn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
+                app:cornerRadius="10dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button_style1"
+                android:backgroundTint="#2196F3"
                 android:text="Sign Up"
                 android:textColor="@color/white" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/backtoLoginBtn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
+                app:cornerRadius="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button_style2"
+                android:backgroundTint="#E91E63"
                 android:text="Already Have an Account?"
                 android:textColor="@color/white" />
         </LinearLayout>

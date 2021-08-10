@@ -3,6 +3,7 @@ package com.example.myvideoapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,12 +22,15 @@ public class LoginActivity extends AppCompatActivity {
     Button loginBtn, createBtn;
 
     FirebaseAuth auth;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Please Wait...");
         emailId = findViewById(R.id.editTextTextEmailAddress);
         passwordId = findViewById(R.id.editTextTextPassword);
         loginBtn = findViewById(R.id.loginBtn);
@@ -45,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressDialog.show();
                 String email, pass;
                 email = emailId.getText().toString();
                 pass = passwordId.getText().toString();
@@ -52,8 +57,10 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressDialog.dismiss();
                         if(task.isSuccessful()){
                             Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(LoginActivity.this, DashboardActivity.class));
                         }else{
                             Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
 

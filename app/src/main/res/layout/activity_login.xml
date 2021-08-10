@@ -76,20 +76,22 @@
 
             <Button
                 android:id="@+id/loginBtn"
+                app:cornerRadius="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/button_style1"
+                android:backgroundTint="#2196F3"
                 android:text="Login"
                 android:textColor="@color/white" />
 
             <Button
                 android:id="@+id/createBtn"
+                app:cornerRadius="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="58dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/button_style2"
+                android:backgroundTint="#E91E63"
                 android:text="Create an Account"
                 android:textColor="@color/white" />
         </LinearLayout>

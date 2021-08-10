@@ -7,13 +7,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MyVideoApp">
-        <activity android:name=".SignUpActivity"
-            android:label="Create An Account"></activity>
-        <activity android:name=".LoginActivity"
-            android:label="Login"/>
-        <activity android:name=".MainActivity" android:theme="@style/Theme.MyVideoApp.NoActionBar">
+        android:supportsRtl="true">
+        <activity android:name=".DashboardActivity"
+            android:theme="@style/Theme"></activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:label="Create An Account" />
+        <activity android:theme="@style/Theme.MyVideoApp.NoActionBar"
+            android:name=".LoginActivity"
+            android:label="Login" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.MyVideoApp.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
